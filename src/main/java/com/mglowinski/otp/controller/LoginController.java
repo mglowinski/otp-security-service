@@ -40,7 +40,7 @@ public class LoginController {
     @PostMapping("/otp")
     public String validateOtp(@RequestParam("otpNumber") int otpNumber) {
         final String SUCCESS = "Entered Otp is valid";
-        final String FAIL = "Enter  ed Otp is NOT valid. Please Retry!";
+        final String FAIL = "Entered Otp is NOT valid. Please Retry!";
 
         String username = SecurityUtils.getCurrentUserLogin();
         boolean isOtpValid = otpService.validateOtp(username, otpNumber);
