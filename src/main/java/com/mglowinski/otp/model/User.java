@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class User {
 
     @Id
@@ -16,7 +16,7 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private String email;
+    private String username;
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
