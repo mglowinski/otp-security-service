@@ -41,6 +41,10 @@ public class UserService implements UserDetailsService {
         return userRepository.findByUsername(username);
     }
 
+    public Optional<String> getEmailByUsername(String username) {
+        return userRepository.findByUsername(username).map(User::getEmail);
+    }
+
     public User createUser(User user) {
         return userRepository.save(user);
     }

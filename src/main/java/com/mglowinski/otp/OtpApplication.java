@@ -36,6 +36,7 @@ public class OtpApplication {
                 "Mock last name",
                 "user",
                 passwordEncoder.encode("pw"),
+                "mck00@o2.pl",
                 new HashSet<>(
                         Arrays.asList(
                                 new Role("ROLE_USER"),
