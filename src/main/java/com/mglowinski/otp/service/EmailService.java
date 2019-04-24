@@ -16,7 +16,7 @@ public class EmailService {
         this.javaMailSender = javaMailSender;
     }
 
-    public void sendSimpleMessage(EmailDto emailDto) {
+    void sendSimpleMessage(EmailDto emailDto) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
 
         mailMessage.setTo(emailDto.getTo());

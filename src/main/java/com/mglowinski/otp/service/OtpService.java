@@ -5,8 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Slf4j
 @Service
 public class OtpService {
@@ -27,8 +25,8 @@ public class OtpService {
     public void generateOtp(String username) {
         int otpValue = otpGenerator.generateOtp(username);
 
-        Optional<String> userEmail = userService.getEmailByUsername(username);
-        userEmail.ifPresent(s -> sendEmail(s, otpValue));
+        userService.getEmailByUsername(username)
+                .ifPresent(userEmail -> sendEmail(userEmail, otpValue));
 
         log.info("Otp value is: " + otpValue);
     }

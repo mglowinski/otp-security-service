@@ -26,7 +26,7 @@ public class OtpGenerator {
                 });
     }
 
-    public int generateOtp(String username) {
+    int generateOtp(String username) {
         Random random = new Random();
 
         int otp = 100000 + random.nextInt(900000);
@@ -35,7 +35,7 @@ public class OtpGenerator {
         return otp;
     }
 
-    public int getUserOtp(String username) {
+    int getUserOtp(String username) {
         try {
             return otpCache.get(username);
         } catch (ExecutionException e) {
@@ -43,7 +43,7 @@ public class OtpGenerator {
         }
     }
 
-    public void clearOtpFromCache(String username) {
+    void clearOtpFromCache(String username) {
         otpCache.invalidate(username);
     }
 
